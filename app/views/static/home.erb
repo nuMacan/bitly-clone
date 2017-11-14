@@ -1,0 +1,37 @@
+
+<br><br>
+<br>
+<br>
+<form action= "/urls" method="post">
+<!-- 	method above is revering to controller/static the post with the name 'urls' -->
+	Enter URL:
+	<input type="text" name="long_url">
+	<input type="submit" value="submit">
+	<!-- <a href="/urls">submit</a>
+ -->
+</form>
+<br><br>
+
+
+<table>
+  <tr>
+    <th>Short Url</th>
+    <th>Original Url</th>
+    <th>Click Count</th>
+  </tr>
+  
+<% @urls.each do |url| %>
+	<tr>
+		<td> <%= url.original_url %> </td>
+		<td> <a href="/<%= url.shortened_url %>"><%= url.shortened_url %></a></td>
+		<td> <%= url.click_count %></td>
+	</tr>
+<% end %>
+</table>
+
+<br> <br>
+<br><br>
+<!-- <a href="/signup">Sign Up</a> -->
+
+</body>
+</html>
